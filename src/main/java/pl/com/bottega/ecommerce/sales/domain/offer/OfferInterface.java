@@ -2,9 +2,7 @@ package pl.com.bottega.ecommerce.sales.domain.offer;
 
 public interface OfferInterface {
 
-	public int hashcode();
+	public int hashCode();
 	
-	public boolean equals();
-	
-	public boolean sameAs();
+	public boolean equals(Object obj);
 }

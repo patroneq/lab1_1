@@ -3,11 +3,12 @@ package pl.com.bottega.ecommerce.sales.domain.offer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Offer {
+public class Offer implements OfferInterface {
+private List<OfferItem> availabeItems = new ArrayList<OfferItem>();
 	
-	private List<OfferItem> availabeItems = new ArrayList<OfferItem>();	
 	private List<OfferItem> unavailableItems = new ArrayList<OfferItem>();
-		
+	
+	
 	public Offer(List<OfferItem> availabeItems, List<OfferItem> unavailableItems) {
 		this.availabeItems = availabeItems;
 		this.unavailableItems = unavailableItems;
@@ -53,7 +54,7 @@ public class Offer {
 	 * @param delta acceptable difference in percent
 	 * @return
 	 */
-	public boolean sameAs(Offer seenOffer, double delta) {
+	boolean sameAs(Offer seenOffer, double delta) {
 		if (! (availabeItems.size() == seenOffer.availabeItems.size()))
 			return false;
 		
@@ -64,6 +65,7 @@ public class Offer {
 			if (!sameItem.sameAs(item, delta))
 				return false;
 		}
+		
 		return true;
 	}
 
@@ -74,4 +76,6 @@ public class Offer {
 		}
 		return null;
 	}
+	
+
 }

@@ -18,7 +18,7 @@ package pl.com.bottega.ecommerce.sales.domain.offer;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class OfferItem {
+public class OfferItem implements OfferInterface {
 
 	// product
 	private String productId;
@@ -173,7 +173,7 @@ public class OfferItem {
 	 *            acceptable percentage difference
 	 * @return
 	 */
-	public boolean sameAs(OfferItem other, double delta) {
+	boolean sameAs(OfferItem other, double delta) {
 		if (productName == null) {
 			if (other.productName != null)
 				return false;
@@ -209,5 +209,4 @@ public class OfferItem {
 
 		return acceptableDelta.compareTo(difference) > 0;
 	}
-
 }
