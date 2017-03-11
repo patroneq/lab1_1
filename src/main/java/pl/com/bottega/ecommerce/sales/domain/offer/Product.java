@@ -19,4 +19,24 @@ class Product {
 		this.snapshotDate = productSnapshotDate;
 		this.type = productType;
 	}
+	
+	public String getProductId() {
+		return id;
+	}
+	
+	public BigDecimal getProductPrice() {
+		return price;
+	}
+	
+	public String getProductName() {
+		return name;
+	}
+	
+	public Date getProductSnapshotDate() {
+		return snapshotDate;
+	}
+	
+	public String getProductType() {
+		return type;
+	}
 }
